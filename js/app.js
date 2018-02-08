@@ -1,0 +1,1 @@
+var gabohn = angular.module('gabohn', []);
