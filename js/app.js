@@ -1,1 +1,1 @@
-var gabohn = angular.module('gabohn', []);
+var app = angular.module('myApp', []);

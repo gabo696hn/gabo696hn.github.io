@@ -1,0 +1,22 @@
+{
+    "title": "Welcome",
+    "paragraphs": [
+        "Greetings, my name is Gabriel and I’m a systems engineer passionate about data analysis and web application development.",
+        "I’ve worked with the computational tool R and the KDD methodology. I’m currently studying other tools such as python and svg charts, intending to amplify my possibilities.",
+        "I’m also studying the languages associated with web, since it seems to me that currently is the best way to present information."
+    ],
+    "imagery": [
+        {
+            "src": "img/home/1.svg",
+            "desc": "this is the img 1"
+        },
+        {
+            "src": "img/home/2.svg",
+            "desc": "this is the img 2"
+        },
+        {
+            "src": "img/home/3.svg",
+            "desc": "this is the img 3"
+        }
+    ]
+}

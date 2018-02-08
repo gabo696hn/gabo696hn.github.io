@@ -37,4 +37,22 @@ const subsection = {
 
 const welcome = JSON.stringify(subsection);
 
-console.log(welcome)
+console.log(welcome);
+
+
+
+
+
+
+
+
+
+
+var fs = require('fs');
+fs.writeFile('js/data.json', JSON.stringify(subsection, null, 4), (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    };
+    console.log("File has been created");
+});
