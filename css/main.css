@@ -1,0 +1,89 @@
+.horizontal-collapse {
+    height: 70px;
+}
+.navbar-collapse.in {
+    overflow-y: hidden;
+}
+.navbar-brand embed, .navbar-brand img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+}
+a {
+    cursor: pointer;
+}
+.nav, .pagination, .carousel, .panel-title a { 
+    cursor: pointer; 
+}
+.banner embed, .banner img {
+    width: 100%;
+}
+footer {
+    text-align: end;
+}
+.carousel {
+    width: 50%;
+}
+.carousel-control {
+    width: 10%;
+    color: #000;
+}
+.carousel-inner {
+    width: 80%;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px){
+.carousel-caption {
+    right: 20%;
+    left: 70%;
+}}
+.carousel-caption {
+    position: inherit;
+    right: 15%;
+    bottom: 0px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+@media screen and (min-width: 768px){
+.carousel-indicators {
+    bottom: 20px;
+}}
+.carousel-indicators {
+    position: inherit;
+    bottom: 10px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: grey;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 10px;
+}

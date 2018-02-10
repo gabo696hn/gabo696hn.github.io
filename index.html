@@ -5,17 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gabo HN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--link rel="stylesheet" type="text/css" media="screen" href="main.css" /-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <!--meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /-->
+    <script src="js/shared/angular.min.js"></script>
+    <script src="js/shared/angular-animate.min.js"></script>
+    <script src="js/shared/angular-sanitize.min.js"></script>
+    <script src="js/shared/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <link href="css/shared/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+
 </head>
-<body ng-app="myApp">
-    
-    <div ng-controller="MainController">
-        <p>{{ title }}</p>
+<body class="container" ng-app="myApp" ng-controller="MainController">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ng-click="changeSection(0)">
+                <img ng-src="{{ logo }}" ng-click="changeSection(0)" type="">
+            </a>
+            <a class="navbar-brand"ng-click="changeSection(0)">{{ brand }}</a>
+        </div>
+        <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+            <ul class="nav navbar-nav" ng-repeat="section in sections">
+                <li ng-class="{active:currentSection===$index}"><a class="nav-link" ng-click="changeSection($index)">{{ section.title }}</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <embed ng-src="{{ sections[currentSection].banner }}" type="">
     </div>
 
+    <!--div class="navbar" ng-if="sections[currentSection].subsections.length >=2">
+        <ul class="nav navbar-nav" ng-repeat="subsection in sections[currentSection].subsections">
+            <li><a class="btn btn-success " ng-click="changeSubsection($index)">{{ subsection.title }}</a></li>
+        </ul>
+    </div-->
+
+    <uib-tabset ng-if="sections[currentSection].subsections.length >=2">
+        <uib-tab ng-repeat="subsection in sections[currentSection].subsections" index="$index" heading="{{ subsection.title }}" ng-click="changeSubsection($index)"></uib-tab>
+    </uib-tabset>
+
+    <main>
+        <article>
+            <h2>{{ sections[currentSection].subsections[currentSubsection].title }}</h2>
+            <div ng-repeat="paragraph in sections[currentSection].subsections[currentSubsection].paragraphs">
+                <p>{{ paragraph }}</p>
+            </div>
+        </article>
+    </main>
+
+    <div class"carousel" ng-if="sections[currentSection].subsections[currentSubsection].slides.length > 0">
+        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="slide in sections[currentSection].subsections[currentSubsection].slides" index="slide.id">
+            <embed ng-src="{{slide.image}}" class="carousel-slide">
+            <div class="carousel-caption">
+              <p>{{slide.text}}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <embed src="http://gabosapp.pythonanywhere.com" type="" width="1140" height="800"/>
+
+    <footer>
+        &copy; {{ creation }} {{ creator }}
+    </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/data.js"></script>
+
     <script src="js/controllers/MainController.js"></script>
+
 </body>
 </html>

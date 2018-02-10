@@ -1,0 +1,48 @@
+
+    <!--nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" style="cursor: pointer" ng-click="changeSection(0)">
+            <embed  width="30" height="30" class="d-inline-block align-top" ng-src="{{ logo }}" ng-click="changeSection(0)">
+            {{ brand }}
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" ng-repeat="section in sections">
+                <li class="nav-item">
+                    <a class="nav-link" ng-click="changeSection($index)">{{ section.title }}</a>
+                </li>
+            </ul>
+        </div>
+    </nav-->
+
+    <!--header class="d-flex p-2">
+        <img style="cursor: pointer" ng-src="{{ logo }}" ng-click="changeSection(0)">
+        <h1 class="navbar-brand" style="cursor: pointer" ng-click="changeSection(0)">{{ brand }}</h1>
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded" ng-repeat="section in sections">
+            <p class="btn btn-info" ng-click="changeSection($index)">{{ section.title }}</p>
+        </nav>
+    </header-->
+
+
+    .ng-scope, .ng-binding {
+    color: black;
+    border-color: black;
+    outline-color: black;
+    color
+}
+
+@media screen and (min-width: 768px){
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    font-size: 18px;
+    margin-left: -16px;
+}
+}
+
+.carousel-control {
+    width: 10%;
+    font-size: 30px;
+}
