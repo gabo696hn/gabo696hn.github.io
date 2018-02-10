@@ -4,7 +4,7 @@ let paragraph = 'Greetings, my name is Gabriel and I’m a systems engineer pass
 let paragraphs = [];
 paragraphs.push(paragraph);
 paragraphs.push('I’ve worked with the computational tool R and the KDD methodology. I’m currently studying other tools such as python and svg charts, intending to amplify my possibilities.');
-paragraphs.push('I’m also studying the languages associated with web, since it seems to me that currently is the best way to present information.');
+paragraphs.push('I’m also studying languages associated with the web, since it seems to me that currently is the best way to present information.');
 
 let src = 'img/home/1.svg';
 let description = 'this is the img 1';
