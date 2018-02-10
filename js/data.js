@@ -38,6 +38,7 @@ let section = {
 
 let sections = [];
 sections.push(section);
+sectios[0].subsections[0].slides.pop();
 
 section = {
     title: 'Data Analysis',
