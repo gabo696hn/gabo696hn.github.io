@@ -25,6 +25,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding-top: 20px;
+    padding-bottom: 30px;
 }
 footer h5, footer div {
     margin-right: 16px;
