@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <title>Gabo HN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -26,7 +27,7 @@
             <a class="navbar-brand" ng-click="changeSection(0)">
                 <img ng-src="{{ logo }}" ng-click="changeSection(0)" type="">
             </a>
-            <a class="navbar-brand"ng-click="changeSection(0)">{{ brand }}</a>
+            <a class="navbar-brand" ng-click="changeSection(0)">{{ brand }}</a>
         </div>
         <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
             <ul class="nav navbar-nav" ng-repeat="section in sections">
@@ -39,38 +40,37 @@
         <embed ng-src="{{ sections[currentSection].banner }}" type="">
     </div>
 
-    <!--div class="navbar" ng-if="sections[currentSection].subsections.length >=2">
-        <ul class="nav navbar-nav" ng-repeat="subsection in sections[currentSection].subsections">
-            <li><a class="btn btn-success " ng-click="changeSubsection($index)">{{ subsection.title }}</a></li>
-        </ul>
-    </div-->
-
     <uib-tabset ng-if="sections[currentSection].subsections.length >=2">
-        <uib-tab ng-repeat="subsection in sections[currentSection].subsections" index="$index" heading="{{ subsection.title }}" ng-click="changeSubsection($index)"></uib-tab>
+        <uib-tab ng-repeat="subsection in sections[currentSection].subsections" index="$index" heading="{{ subsection.short }}" ng-click="changeSubsection($index)"></uib-tab>
     </uib-tabset>
 
     <main>
         <article>
             <h2>{{ sections[currentSection].subsections[currentSubsection].title }}</h2>
             <div ng-repeat="paragraph in sections[currentSection].subsections[currentSubsection].paragraphs">
-                <p>{{ paragraph }}</p>
+                <p ng-bind-html="paragraph | linky:'_blank':{rel: 'nofollow'}"></p>
             </div>
         </article>
+        <div class"carousel" ng-if="sections[currentSection].subsections[currentSubsection].slides.length > 0">
+            <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+            <div uib-slide ng-repeat="slide in sections[currentSection].subsections[currentSubsection].slides" index="slide.id">
+                <embed ng-src="{{slide.image}}" class="carousel-slide">
+                <div class="carousel-caption">
+                <p ng-bind-html="slide.text" | linky:'_blank':{rel: 'nofollow'}></p>
+                </div>
+            </div>
+            </div>
+        </div>
     </main>
 
-    <div class"carousel" ng-if="sections[currentSection].subsections[currentSubsection].slides.length > 0">
-        <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-          <div uib-slide ng-repeat="slide in sections[currentSection].subsections[currentSubsection].slides" index="slide.id">
-            <embed ng-src="{{slide.image}}" class="carousel-slide">
-            <div class="carousel-caption">
-              <p>{{slide.text}}</p>
-            </div>
-          </div>
-        </div>
-    </div>
+    
 
     <footer>
-        &copy; {{ creation }} {{ creator }}
+        <div class="btn-group">
+            <label class="btn btn-primary btn-sm" ng-class="{active:sections[0].title==='Home'}" ng-click="changeLanguage('en')">en</label>
+            <label class="btn btn-primary btn-sm" ng-class="{active:sections[0].title==='Inicio'}" ng-click="changeLanguage('es')">es</label>
+        </div>
+        <h5>&copy; {{ creation }} {{ creator }}</h5>
     </footer>
 
     <script src="js/app.js"></script>

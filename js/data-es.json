@@ -1,0 +1,112 @@
+[
+    {
+        "title": "Inicio",
+        "subsections": [
+            {
+                "title": "Bienvenido",
+                "short": "Bienvenido",
+                "paragraphs": [
+                    "Saludos, mi nombre es Gabriel y soy un ingeniero de sistemas apasionado por el análisis de datos y el desarrollo de aplicaciones web.",
+                    "He trabajado con la herramienta computacional https://www.r-project.org/ y la metodología KDD. Actualmente me encuentro estudiando otras herramientas como https://www.python.org/ y graficas svg, con la intención de amplificar mis posibilidades.",
+                    "También me encuentro estudiando los lenguajes asociados con la web, ya que me parece que actualmente es la mejor forma de presentar información."
+                ],
+                "slides": []
+            }
+        ],
+        "banner": "img/home.svg"
+    },
+    {
+        "title": "Análisis de Datos",
+        "banner": "img/da.svg",
+        "subsections": [
+            {
+                "title": "Análisis exploratorio",
+                "short": "Exploración",
+                "paragraphs": [
+                    "Identificar los objetos y tipos de atributos nos permite tratarlos correctamente. Puede parecer elemental, pero se torna necesario cuando nos enfrentamos a grandes cantidades de atributos. No aplicaríamos una medida de tendencia central a una fecha ni haríamos un gráfico de barras de un precio.",
+                    "La tendencia central y la dispersión junto con graficas que las ilustren nos permiten conocer la distribución de los valores de los atributos, la correlación entre varios atributos y posibles valores atípicos."
+                ],
+                "slides": [
+                    {
+                        "id": 0,
+                        "image": "img/da/boxplot.svg",
+                        "text": "Gráfico de caja de la edad"
+                    },
+                    {
+                        "id": 1,
+                        "image": "img/da/barplot.svg",
+                        "text": "Gráfico de barras de la supervivencia"
+                    }
+                ]
+            },
+            {
+                "title": "Preprocesamiento",
+                "short": "Preprocesamiento",
+                "paragraphs": [
+                    "Las bases de datos en el mundo real contienen errores, valores faltantes y valores espurios, por lo que es necesario aplicar técnicas para limpiarlos. Los datos a menudo se distribuyen en diferentes objetos o fuentes y es necesario integrarlos de manera consistente para evitar la aparición de errores adicionales.",
+                    "En general, las fuentes de datos no están optimizadas para el análisis. Es necesario reducir el costo computacional mediante técnicas de reducción y moldear datos a través de técnicas de transformación para que estén preparados para el análisis."
+                ],
+                "slides": []
+            },
+            {
+                "title": "Minería de datos",
+                "short": "Minería",
+                "paragraphs": [
+                    "Diversas técnicas de minería de datos permiten extraer información en forma de modelos matemáticos. Técnicas de clasificación, que permiten predecir un atributo de salida desde otros atributos de entrada; Técnicas de asociación, que permiten encontrar patrones lógicos del comportamiento de los objetos; técnicas de agrupamiento que permiten encontrar similitudes y diferencias entre grupos de objetos; y técnicas de detección de valores atípicos que permiten encontrar objetos con comportamientos excepcionales."
+                ],
+                "slides": []
+            },
+            {
+                "title": "Evaluación de patrones",
+                "short": "Evaluación",
+                "paragraphs": [
+                    "La minería de datos produce patrones que son interesantes desde un punto de vista técnico, es decir, tienen altas medidas de interés; como el soporte, la confianza o la certeza, entre otros. Sin embargo, no todos los patrones encontrados suelen ser interesantes para la organización.",
+                    "La evaluación de patrones es la etapa de selección de patrones que pueden representar algún beneficio para los factores interesados en el estudio, de acuerdo con sus perspectivas o expectativas."
+                ],
+                "slides": []
+            },
+            {
+                "title": "Presentación del conocimiento",
+                "short": "Presentación",
+                "paragraphs": [
+                    "Es necesario elegir las técnicas de representación adecuadas para que los factores interesados puedan asimilar los resultados del análisis, como tablas o gráficos donde los modelos se expongan de manera comprensible."
+                ],
+                "slides": []
+            }
+        ]
+    },
+    {
+        "title": "Desarrollo Web",
+        "banner": "img/wd.svg",
+        "subsections": [
+            {
+                "title": "Front end",
+                "short": "Front end",
+                "paragraphs": [
+                    "Esta misma página se ejecuta completamente en el front end, lo que significa que se ejecuta completamente en tu dispositivo. Fue hecho usando herramientas como AngularJS, UI Bootstrap y Bootstrap; junto con HTML, CSS y JavaScript puro."
+                ],
+                "slides": []
+            },
+            {
+                "title": "Back end",
+                "short": "Back end",
+                "paragraphs": [
+                    "Algunas aplicaciones requieren la actualización y recuperación de información de bases de datos o el uso de servicios autenticados, en donde entra el back end. Las herramientas que se ejecutan en un servidor que verificará si tiene permiso para acceder o modificar ciertos datos."
+                ],
+                "slides": []
+            }
+        ]
+    },
+    {
+        "title": "Contacto",
+        "banner": "img/home.svg",
+        "subsections": [
+            {
+                "title": "Contacto",
+                "short": "Contacto",
+                "paragraphs": [],
+                "slides": []
+            }
+        ]
+    }
+]
