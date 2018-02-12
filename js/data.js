@@ -268,7 +268,7 @@ sections_es = [
             {
                 title: 'Contacto',
                 short: 'Contacto',
-                paragraphs: [],
+                paragraphs: ['.'],
                 slides: []
             }
         ]
