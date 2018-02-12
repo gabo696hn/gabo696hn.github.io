@@ -73,10 +73,10 @@
         <h5>&copy; {{ creation }} {{ creator }}</h5>
     </footer>
 
-    <script src="js/app.js"></script>
-    <script src="js/data.js"></script>
+    <script src="js/app.js?r=<%= session.getId()%>"></script>
+    <script src="js/data.js?r=<%= session.getId()%>"></script>
 
-    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/MainController.js?r=<%= session.getId()%>"></script>
 
 </body>
 </html>
