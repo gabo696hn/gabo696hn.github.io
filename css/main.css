@@ -1,3 +1,12 @@
+.subsection {
+    padding: 8px;
+}
+.subsection p {
+    text-align: justify;
+}
+tr.head {
+    background-color: lightblue;
+}
 .horizontal-collapse {
     height: 70px;
 }
@@ -27,20 +36,28 @@ footer {
     padding-top: 20px;
     padding-bottom: 30px;
 }
-footer h5, footer div {
+/*footer h5, footer div {
     margin-right: 16px;
     margin-left: 8px; 
-}
+}*/
 .btn-group-sm>.btn, .btn-sm {
-    padding: 2px 16px;
+    padding: 2px 8px;
+}
+/*.subsection {
+    width: 50%;
 }
 .carousel {
-    margin-top: 40px;
-    width: 100%;
-}
+    width: 80%;
+}*/
 .carousel-control {
     width: 10%;
     color: #000;
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+}
+.carousel-control:focus, .carousel-control:hover {
+    color: black;
 }
 .carousel-inner {
     width: 80%;
@@ -99,3 +116,19 @@ footer h5, footer div {
     border: 2px solid gray;
     border-radius: 10px;
 }
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-row>*{
+    width: 50%;
+}
+@media screen and (max-width: 768px){
+    .flex-row {
+        flex-direction: column;
+    }
+    .flex-row>*{
+        width: 100%;
+}}

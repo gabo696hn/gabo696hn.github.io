@@ -1,0 +1,8 @@
+<table class="table table-striped table-hover">
+    <tr class="table-primary">
+        <th ng-repeat="colName in info.columns">{{ colName }}</th>
+    </tr>
+    <tr ng-repeat="row in info.data">
+        <td ng-repeat="value in row track by $index">{{ value }}</td>
+    </tr>
+</table>

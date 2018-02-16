@@ -1,0 +1,4 @@
+<h2>{{ info.title }}</h2>
+<div ng-repeat="paragraph in info.paragraphs">
+    <p ng-bind-html="paragraph | linky:'_blank':{rel: 'nofollow'}"></p>
+</div>

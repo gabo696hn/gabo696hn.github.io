@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <title>Gabo HN</title>
+    <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <script src="js/shared/angular.min.js"></script>
     <script src="js/shared/angular-animate.min.js"></script>
     <script src="js/shared/angular-sanitize.min.js"></script>
+    <script src="js/shared/angular-route.min.js"></script>
+    <script src="js/shared/angular-cookies.min.js"></script>
     <script src="js/shared/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <link href="css/shared/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
@@ -24,59 +27,41 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ng-click="changeSection(0)">
-                <img ng-src="{{ logo }}" ng-click="changeSection(0)" type="">
+            <a class="navbar-brand" href="{{'#/home'}}">
+                <img ng-src="{{ logo }}" type="">
             </a>
-            <a class="navbar-brand" ng-click="changeSection(0)">{{ brand }}</a>
+            <a class="navbar-brand" href="{{'#/home'}}">{{ brand }}</a>
         </div>
         <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
-            <ul class="nav navbar-nav" ng-repeat="section in sections">
-                <li ng-class="{active:currentSection===$index}"><a class="nav-link" ng-click="changeSection($index)">{{ section.title }}</a></li>
+            <ul class="nav navbar-nav" ng-repeat="shortcut in sections['shortcuts']">
+                <li ng-class="{active: map('/'+shortcut)}"><a class="nav-link" href="{{'#/'+shortcut}}">{{ sections['en'][$index] }}</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="banner">
-        <embed ng-src="{{ sections[currentSection].banner }}" type="">
-    </div>
-
-    <uib-tabset ng-if="sections[currentSection].subsections.length >=2">
-        <uib-tab ng-repeat="subsection in sections[currentSection].subsections" index="$index" heading="{{ subsection.short }}" ng-click="changeSubsection($index)"></uib-tab>
-    </uib-tabset>
-
-    <main>
-        <article>
-            <h2>{{ sections[currentSection].subsections[currentSubsection].title }}</h2>
-            <div ng-repeat="paragraph in sections[currentSection].subsections[currentSubsection].paragraphs">
-                <p ng-bind-html="paragraph | linky:'_blank':{rel: 'nofollow'}"></p>
-            </div>
-        </article>
-        <div class"carousel" ng-if="sections[currentSection].subsections[currentSubsection].slides.length > 0">
-            <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-            <div uib-slide ng-repeat="slide in sections[currentSection].subsections[currentSubsection].slides" index="slide.id">
-                <embed ng-src="{{slide.image}}" class="carousel-slide">
-                <div class="carousel-caption">
-                <p ng-bind-html="slide.text" | linky:'_blank':{rel: 'nofollow'}></p>
-                </div>
-            </div>
-            </div>
-        </div>
-    </main>
-
-    
+    <div ng-view></div>
 
     <footer>
         <div class="btn-group">
-            <label class="btn btn-primary btn-sm" ng-class="{active:sections[0].title==='Home'}" ng-click="changeLanguage('en')">en</label>
-            <label class="btn btn-primary btn-sm" ng-class="{active:sections[0].title==='Inicio'}" ng-click="changeLanguage('es')">es</label>
+            <label class="btn btn-primary btn-sm" ng-class="{active:sLang==='en'}" ng-click="changeLanguage('en')">en</label>
+            <label class="btn btn-primary btn-sm" ng-class="{active:sLang==='es'}" ng-click="changeLanguage('es')">es</label>
         </div>
         <h5>&copy; {{ creation }} {{ creator }}</h5>
     </footer>
 
-    <script src="js/app.js"></script>
-    <script src="js/data.js"></script>
+    <script src="js/app.js?v=1.0.0"></script>
 
-    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/MainController.js?v=1.0.0"></script>
+    <script src="js/controllers/HomeController.js?v=1.0.0"></script>
+    <script src="js/controllers/DAController.js?v=1.0.0"></script>
+    <script src="js/controllers/WDController.js?v=1.0.0"></script>
+    <script src="js/controllers/ContactController.js?v=1.0.0"></script>
+
+    <script src="js/directives/banner.js?v=1.0.0"></script>
+    <script src="js/directives/subsection.js?v=1.0.0"></script>
+    <script src="js/directives/carousel.js?v=1.0.0"></script>
+    <script src="js/directives/tabled.js?v=1.0.0"></script>
+
 
 </body>
 </html>
