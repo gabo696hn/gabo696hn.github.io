@@ -34,7 +34,7 @@
         </div>
         <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
             <ul class="nav navbar-nav" ng-repeat="shortcut in sections['shortcuts']">
-                <li ng-class="{active: map('/'+shortcut)}"><a class="nav-link" href="{{'#/'+shortcut}}">{{ sections['en'][$index] }}</a></li>
+                <li ng-class="{active: map('/'+shortcut)}"><a class="nav-link" href="{{'#/'+shortcut}}">{{ sections[sLang][$index] }}</a></li>
             </ul>
         </div>
     </nav>
