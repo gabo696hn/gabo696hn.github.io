@@ -1,5 +1,5 @@
 <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-    <div uib-slide ng-repeat="slide in info" index="slide.id">
+    <div uib-slide ng-repeat="slide in info track by slide.id" index="slide.id">
         <embed ng-src="{{slide.image}}" class="carousel-slide">
         <div class="carousel-caption">
             <p ng-bind-html="slide.text" | linky:'_blank':{rel: 'nofollow'}></p>

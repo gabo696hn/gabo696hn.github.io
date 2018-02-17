@@ -33,7 +33,7 @@
             <a class="navbar-brand" href="{{'#/home'}}">{{ brand }}</a>
         </div>
         <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
-            <ul class="nav navbar-nav" ng-repeat="shortcut in sections['shortcuts']">
+            <ul class="nav navbar-nav" ng-repeat="shortcut in sections['shortcuts'] track by $index">
                 <li ng-class="{active: map('/'+shortcut)}" ng-click="collapseMenu()"><a class="nav-link" href="{{'#/'+shortcut}}">{{ sections[sLang][$index] }}</a></li>
             </ul>
         </div>

@@ -1,4 +1,4 @@
 <banner info=banner></banner>
-<div ng-repeat="subsection in section[sLang].subsections">
+<div ng-repeat="subsection in section[sLang].subsections track by $index">
     <subsection info=subsection></subsection>
 </div>
