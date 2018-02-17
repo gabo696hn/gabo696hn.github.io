@@ -24,8 +24,9 @@ app.controller('MainController', ['$scope', '$location', '$cookies', function($s
     ]
   };
   $scope.isNavCollapsed = true;
-  $scope.isCollapsed = false;
-  $scope.isCollapsedHorizontal = false;
+  $scope.collapseMenu = function() {
+    $scope.isNavCollapsed = true;
+  };
   
   // carousel
   $scope.myInterval = 0;
