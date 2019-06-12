@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: gabo696hn.github.io
+Token: 3b24ea8469b8999d69c37cf84a132bdbf36e71a693e69147a084495c3dd42e88
